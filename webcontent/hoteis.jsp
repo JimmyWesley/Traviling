@@ -39,12 +39,12 @@
   
    <div class="col-10 col-lg-4">
           <div class="loginservlet ">
-            <div class="text-left mb-2 text-white bg-dark px-4" >
+            <div class="text-left mb-2 text-white bg-info px-4" >
               <div class="hotel-id"><c:out value="${li.dest_type}" /></div>
               <div class="hotel-nome"><c:out value="${li.name}"/></div>
               <div class="hotel-site"><c:out value="${li.label}"/></div>
-              <div class="hotel-img"><c:out value="${li.image_url}"/></div>
-              <a href=""><button class="btn btn-block btn-lg text-info bg-warning " name="enviardados"></a>
+              <div class="hotel-img"><img alt="" src="<c:out value="${li.image_url}"/>"></div>
+              <a href=""><button class="btn btn-block btn-lg text-white bg-warning " name="enviardados"></a>
                 Reservar
               </button>
             </div>

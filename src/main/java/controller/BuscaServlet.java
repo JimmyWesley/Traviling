@@ -28,8 +28,13 @@ public class BuscaServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request,HttpServletResponse response ) 
 			throws IOException, ServletException 
 	{		
+		var local = "Osasco";
+		
+		if(request.getParameter("local")!= null)
+			local = request.getParameter("local");
+		
 		HttpRequest req = HttpRequest.newBuilder()
-				.uri(URI.create("https://booking-com.p.rapidapi.com/v1/hotels/locations?name="+request.getParameter("local")+"&locale=pt-br"))
+				.uri(URI.create("https://booking-com.p.rapidapi.com/v1/hotels/locations?name="+local+"&locale=pt-br"))
 				.header("x-rapidapi-host", "booking-com.p.rapidapi.com")
 				.header("x-rapidapi-key", "fb8d9b1f46msh43e2e951aadc919p1c610ajsn17111f74430f")
 				.method("GET", HttpRequest.BodyPublishers.noBody())
